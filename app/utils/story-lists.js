@@ -7,7 +7,7 @@ export function createSource(actions, type) {
       },
 
       local(state) {
-        return state.items;
+        return state.ids;
       },
 
       loading: actions.fetch,
@@ -15,7 +15,7 @@ export function createSource(actions, type) {
       error: actions.fetchFailure,
 
       shouldFetch(state, refresh) {
-        return refresh || state.items.length === 0;
+        return refresh || state.ids.length === 0;
       }
     }
   }
@@ -24,15 +24,15 @@ export function createSource(actions, type) {
 export function createStore(actions, source) {
   return class {
     constructor() {
-      this.items = [];
+      this.ids = [];
       this.err = null;
 
       this.bindActions(actions);
       this.registerAsync(source);
     }
 
-    onFetchSuccess(items) {
-      this.items = items;
+    onFetchSuccess(ids) {
+      this.ids = ids;
     }
 
     onFetchFailure(err) {

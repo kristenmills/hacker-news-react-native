@@ -1,5 +1,5 @@
 import alt from '../alt';
-import { TabBarActions } from '../actions';
+import TabBarActions from '../actions/tab-bar';
 
 class TabBarStore {
   constructor() {
