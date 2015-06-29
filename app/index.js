@@ -3,7 +3,7 @@ import AltContainer from 'alt/AltNativeContainer';
 
 import TabView from './components/tab-view';
 import TabBarStore from './stores/tab-bar';
-import TabBarActions from './actions/tab-bar';
+import { TabBarActions } from './actions';
 
 var { Component } = React;
 
