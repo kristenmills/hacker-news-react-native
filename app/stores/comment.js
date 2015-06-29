@@ -2,23 +2,27 @@ import _ from 'lodash';
 
 import * as Actions from '../actions/story-lists';
 import * as Stores from './story-lists';
-import StoryActions from '../actions/story';
-import StorySource from '../sources/story';
+import CommentActions from '../actions/story';
+import CommentSource from '../sources/comment';
 
-class StoryStore {
+class CommentStore {
   constructor() {
     this.items = {};
     this.err = null;
 
-    this.bindActions(StoryActions);
-    this.registerAsync(StorySource);
+    this.bindActions(CommentActions);
+    this.registerAsync(CommentSource);
     this.bindListeners({
       cleanUp: _.map(Actions, val => val.FETCH_SUCCESS )
     })
   }
 
-  onFetchSuccess(item) {
-    this.items[item.id] = item;
+  onFetchSuccess(payload) {
+    if(!this.items[payload.story]) {
+      this.items[payload.story] = {};
+    }
+
+    this.items[payload.story][payload.comment.id] = payload.comment;
   }
 
   onFetchFailure(err) {
@@ -34,7 +38,6 @@ class StoryStore {
 
     this.items = _.pick(this.items, ids);
   }
-
 }
 
-export default alt.createStore(StoryStore, 'StoryStore');
+export default alt.createStore(CommentStore, 'CommentStore');
