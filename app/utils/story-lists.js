@@ -6,12 +6,8 @@ export function createSource(actions, type) {
           .then((response) => response.json());
       },
 
-      local(state) {
-        return state.ids;
-      },
-
       loading: actions.fetch,
-      success: actions.fetcrSuccess,
+      success: actions.fetchSuccess,
       error: actions.fetchFailure,
 
       shouldFetch(state, refresh) {

@@ -18,11 +18,11 @@ class CommentStore {
   }
 
   onFetchSuccess(payload) {
-    if(!this.items[payload.story]) {
-      this.items[payload.story] = {};
+    if(!this.items[payload.storyId]) {
+      this.items[payload.storyId] = {};
     }
 
-    this.items[payload.story][payload.comment.id] = payload.comment;
+    this.items[payload.storyId][payload.comment.id] = payload.comment;
   }
 
   onFetchFailure(err) {
