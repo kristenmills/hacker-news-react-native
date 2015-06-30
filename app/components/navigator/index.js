@@ -21,7 +21,7 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity
         onPress={() => navigator.pop()}>
         <View style={styles.navBarLeftButton}>
-          <Text style={[styles.navBarText, styles.navBarButtonText]}>
+          <Text style={styles.navBarText}>
             Back
           </Text>
         </View>
@@ -37,7 +37,7 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity
         onPress={route.right.onPress}>
         <View style={styles.navBarRightButton}>
-          <Text style={[styles.navBarText, styles.navBarButtonText]}>
+          <Text style={styles.navBarText}>
             {route.right.title}
           </Text>
         </View>

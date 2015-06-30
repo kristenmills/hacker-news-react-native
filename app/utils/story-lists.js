@@ -2,7 +2,7 @@ export function createSource(actions, type) {
   return {
     fetch: {
       remote(state) {
-        return fetch(`https://hacker-news.firebaseio.com/v0/${type}stories`)
+        return fetch(`https://hacker-news.firebaseio.com/v0/${type}stories.json`)
           .then((response) => response.json());
       },
 

@@ -16,16 +16,17 @@ export default StyleSheet.create({
     fontSize: 16,
     marginVertical: 10,
   },
+
   navBarTitleText: {
     fontWeight: '500',
     marginVertical: 9,
   },
+
   navBarLeftButton: {
     paddingLeft: 10,
   },
+
   navBarRightButton: {
     paddingRight: 10,
-  },
-  navBarButtonText: {
-  },
+  }
 });

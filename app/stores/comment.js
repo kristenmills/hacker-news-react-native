@@ -13,7 +13,7 @@ class CommentStore {
     this.bindActions(CommentActions);
     this.registerAsync(CommentSource);
     this.bindListeners({
-      cleanUp: _.map(Actions, val => val.FETCH_SUCCESS )
+      cleanUp: _.map(Actions, val => val.FETCH_SUCCESS)
     })
   }
 

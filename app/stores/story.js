@@ -13,7 +13,7 @@ class StoryStore {
     this.bindActions(StoryActions);
     this.registerAsync(StorySource);
     this.bindListeners({
-      cleanUp: _.map(Actions, val => val.FETCH_SUCCESS )
+      cleanUp: _.map(Actions, val => val.FETCH_SUCCESS)
     })
   }
 

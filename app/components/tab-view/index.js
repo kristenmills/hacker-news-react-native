@@ -1,7 +1,13 @@
 import React from 'react-native';
-import styles from './styles';
 
-var { Component, StyleSheet, TabBarIOS, View, Text }  = React;
+import styles from './styles';
+import Navigator from '../navigator'
+import * as Routes from '../../routes/story-lists';
+
+var {
+  Component,
+  TabBarIOS,
+}  = React;
 
 var TabBarItem = TabBarIOS.Item;
 
@@ -16,9 +22,7 @@ export default class TabView extends Component {
           selected={this.props.selected === 'Top'}
           onPress={() => this.props.updateTab('Top')}
         >
-          <View style={styles.tabContent}>
-            <Text>Top</Text>
-          </View>
+          <Navigator initialRoute={Routes.TopRoute} />
         </TabBarItem>
         <TabBarItem
           title='New'
@@ -27,9 +31,7 @@ export default class TabView extends Component {
           selected={this.props.selected === 'New'}
           onPress={() => this.props.updateTab('New')}
         >
-          <View style={styles.tabContent}>
-            <Text>New</Text>
-          </View>
+          <Navigator initialRoute={Routes.NewRoute} />
         </TabBarItem>
         <TabBarItem
           title='Ask'
@@ -38,9 +40,7 @@ export default class TabView extends Component {
           selected={this.props.selected === 'Ask'}
           onPress={() => this.props.updateTab('Ask')}
         >
-          <View style={styles.tabContent}>
-            <Text>Ask</Text>
-          </View>
+          <Navigator initialRoute={Routes.AskRoute} />
         </TabBarItem>
         <TabBarItem
           title='Show'
@@ -49,9 +49,7 @@ export default class TabView extends Component {
           selected={this.props.selected === 'Show'}
           onPress={() => this.props.updateTab('Show')}
         >
-          <View style={styles.tabContent}>
-            <Text>Show</Text>
-          </View>
+          <Navigator initialRoute={Routes.ShowRoute} />
         </TabBarItem>
         <TabBarItem
           title='Jobs'
@@ -60,9 +58,7 @@ export default class TabView extends Component {
           selected={this.props.selected === 'Jobs'}
           onPress={() => this.props.updateTab('Jobs')}
         >
-          <View style={styles.tabContent}>
-            <Text>Jobs</Text>
-          </View>
+          <Navigator initialRoute={Routes.JobsRoute} />
         </TabBarItem>
       </TabBarIOS>
     );

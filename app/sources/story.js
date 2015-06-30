@@ -3,7 +3,7 @@ import StoryActions from '../actions/story';
 export default const StorySource = {
   fetch: {
     remote(state, id) {
-      return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}`)
+      return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
         .then((response) => response.json());
     },
 
